@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/iprl/apps/Camera/pose-redis/src/pose-redis.cpp
+librealsense2/rs.hpp
+-
+iostream
+-
+iomanip
+-
+cstring
+-
+math.h
+-
+hiredis/hiredis.h
+-
+

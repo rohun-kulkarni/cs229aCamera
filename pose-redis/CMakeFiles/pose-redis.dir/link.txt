@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/pose-redis.dir/pose-redis.cpp.o  -o pose-redis -lhiredis 

@@ -1,0 +1,5 @@
+/home/iprl/apps/Camera/pose-redis/build/CMakeFiles/rebuild_cache.dir
+/home/iprl/apps/Camera/pose-redis/build/CMakeFiles/edit_cache.dir
+/home/iprl/apps/Camera/pose-redis/build/src/CMakeFiles/rebuild_cache.dir
+/home/iprl/apps/Camera/pose-redis/build/src/CMakeFiles/edit_cache.dir
+/home/iprl/apps/Camera/pose-redis/build/src/CMakeFiles/pose-redis.dir

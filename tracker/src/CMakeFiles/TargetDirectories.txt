@@ -1,0 +1,3 @@
+/home/iprl/apps/Camera/tracker/src/CMakeFiles/rebuild_cache.dir
+/home/iprl/apps/Camera/tracker/src/CMakeFiles/edit_cache.dir
+/home/iprl/apps/Camera/tracker/src/CMakeFiles/tracker.dir

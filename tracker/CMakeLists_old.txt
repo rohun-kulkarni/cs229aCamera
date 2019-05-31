@@ -1,0 +1,33 @@
+#  minimum required cmake version: 3.1.0
+INCLUDE(FindPkgConfig)
+cmake_minimum_required(VERSION 3.1.0)
+
+project(TrackerExample)
+set(CMAKE_MODULE_PATH "./CMakeFiles/")
+find_package(hiredis REQUIRED)
+
+add_executable(tracker tracker.cpp)
+add_executable(pose-redis pose-redis.cpp)
+TARGET_LINK_LIBRARIES(tracker hiredis)
+TARGET_LINK_LIBRARIES(pose-redis hiredis)
+set_property(TARGET tracker PROPERTY CXX_STANDARD 11)
+set_property(TARGET pose-redis PROPERTY CXX_STANDARD 11)
+target_link_libraries(tracker ${DEPENDENCIES})
+target_link_libraries(pose-redis ${DEPENDENCIES})
+
+
+
+ 
+set_target_properties (tracker PROPERTIES
+	FOLDER "Examples/OpenCV"
+)
+
+install(
+	TARGETS
+
+	tracker
+	pose-redis
+
+	RUNTIME DESTINATION
+	${CMAKE_INSTALL_PREFIX}/bin
+)

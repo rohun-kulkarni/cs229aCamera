@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/iprl/apps/Camera/tracker/tracker.cpp
+librealsense2/rs.hpp
+-
+opencv2/opencv.hpp
+-
+../cv-helpers.hpp
+/home/iprl/apps/Camera/cv-helpers.hpp
+opencv2/highgui/highgui.hpp
+/home/iprl/apps/Camera/tracker/opencv2/highgui/highgui.hpp
+iostream
+-
+cstring
+-
+hiredis/hiredis.h
+-
+cstdlib
+-
+

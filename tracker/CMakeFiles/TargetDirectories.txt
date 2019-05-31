@@ -1,0 +1,8 @@
+/home/iprl/apps/Camera/tracker/CMakeFiles/install/strip.dir
+/home/iprl/apps/Camera/tracker/CMakeFiles/install/local.dir
+/home/iprl/apps/Camera/tracker/CMakeFiles/install.dir
+/home/iprl/apps/Camera/tracker/CMakeFiles/list_install_components.dir
+/home/iprl/apps/Camera/tracker/CMakeFiles/tracker.dir
+/home/iprl/apps/Camera/tracker/CMakeFiles/pose-redis.dir
+/home/iprl/apps/Camera/tracker/CMakeFiles/edit_cache.dir
+/home/iprl/apps/Camera/tracker/CMakeFiles/rebuild_cache.dir
