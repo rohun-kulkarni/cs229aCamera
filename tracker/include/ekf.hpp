@@ -7,7 +7,7 @@
 #include "../lib/Eigen/LU"
 #include <iostream>
 
-
+#define grav_const 9.8
 using namespace std;
 using namespace Eigen;
 
@@ -82,8 +82,8 @@ class EKF
 		state_dim = state_dimension;
 		meas_dim = measurement_dimension;
 
-		Q = 0.1*MatrixXf::Identity(state_dim, state_dim);
-		R = 0.1* MatrixXf::Identity(meas_dim, meas_dim);
+		Q = 0.0*MatrixXf::Identity(state_dim, state_dim);
+		R = 0.0* MatrixXf::Identity(meas_dim, meas_dim);
 
 		gravity_vector << 0, 0, 0;
 		//cout << gravity_vector << endl;
@@ -217,6 +217,50 @@ class EKF
 		// cout << endl;
 
 	}
+
+	// void kalman_predictor(double num_tsteps, VectorXf* state_prediction, MatrixXf cov_prediction)
+	// {
+	// 	VectorXf state_prediction(state_dim);
+	// 	MatrixXf cov_prediction(state_dim, state_dim);
+		
+	// 	state_prediction = state_estimates.back();
+	// 	cov_prediction = covariance_estimates.back();
+
+	// 	for (int i = 0:num_tsteps-1)
+	// 	{
+	// 		state_prediction = A*state_prediction; 
+	// 		cov_prediction = A*cov_prediction*A.transpose() + Q;
+
+	// 	}
+
+	// }
+	// // /* solve projectile motion equations to predict the amount of time to 
+	// reach a certain height, use this height to determine x and z locations
+	// at this height
+	// */
+	// double projectile(double final_height)
+	// {
+	// 	Vector Xf current_state_vec(state_dim);
+	// 	current_state_vec = state_estimates.back();
+
+	// 	float x0 = current_state_vec[0];
+	// 	float y0 = current_state_vec[1];
+	// 	float z0 = current_state_vec[2];
+
+	// 	float v0x = current_state_vec[3];
+	// 	float v0y = current_state_vec[4];
+	// 	float v0z = current_state_vec[5];
+
+	// 	float time_to_height;
+
+	// 	disc = pow(v0y,2) - 2*(grav_const) * (y0 - final_height);
+
+	// 	if (disc > 0)
+	// 	{
+	// 		time_to_height = (-v0y^2 + sqrt(disc))/(2*a);
+	// 		return time_to_height;
+	// 	}
+	// }
 
 
 

@@ -24,6 +24,7 @@ std::string RS435_KEY = "from camera";
 #define MIN_CIRCLE_RADIUS_PXL 20
 #define MAX_CIRCLE_RADIUS_PXL 150
 #define US_TO_S (1.0/1000000.0)
+#define S_TO_US (1000000.0)
 using namespace std;
 using namespace cv;
 
@@ -40,6 +41,7 @@ static float previous_position[3];
 static double current_pos_timestamp;
 static double previous_pos_timestamp;
 static float delta_time_us = 1;
+static float final_pos[3] = {-0.1, -0.1, 1.0};
 
 static VectorXf measurements(6);
 
@@ -129,6 +131,42 @@ void collectMeasurements()
     measurements(idx) = current_velocity[idx-3];
   }
 }
+/**********************************************************
+Projectile motion
+*********************************************************/
+void projectile(float final_height, float final_pos[])
+{
+
+  float x0 = current_position[0];
+  float y0 = current_position[1];
+  float z0 = current_position[2];
+
+  float v0x = current_velocity[0];
+  float v0y = current_velocity[1];
+  float v0z = current_velocity[2];
+
+  float time_to_height;
+  float disc = pow(v0y,2) - 2*(grav_const) * (y0 - final_height);
+
+  if (disc > 0)
+  {
+    time_to_height = (-pow(v0y,2) + sqrt(disc))/(2*grav_const);
+    cout<<"time to height  " << time_to_height << endl;
+    final_pos[0] =  (x0 + v0x*time_to_height);
+    final_pos[2] =  (z0 + v0z*time_to_height);
+    
+    final_pos[1] = final_height;
+    
+  }
+  else
+  {
+      cout << "non zero discrimnant" << endl;
+     
+  }
+  
+}
+
+
 // Checks if HSV bound is lower or higher than the original bounds. 
 void addLowerHSVBound(Vec3b &hsv)
 {
@@ -285,14 +323,14 @@ int main( int argc, char* argv[] ){
 
     auto intrinsic = depth_stream.get_intrinsics();
 
-    const auto hough_window = "Hough circle tracker";
-    namedWindow(hough_window, WINDOW_AUTOSIZE);
+    // const auto hough_window = "Hough circle tracker";
+    // namedWindow(hough_window, WINDOW_AUTOSIZE);
 
     const auto window_name_clr = "Color Window";
     namedWindow(window_name_clr, WINDOW_AUTOSIZE);
 
-    const auto window_name_hsv = "HSV Window";
-    namedWindow(window_name_hsv, WINDOW_AUTOSIZE);
+    // const auto window_name_hsv = "HSV Window";
+    // namedWindow(window_name_hsv, WINDOW_AUTOSIZE);
 
     auto gen_element = [](int erosion_size)
     {
@@ -401,7 +439,7 @@ int main( int argc, char* argv[] ){
         circle(color_mat, center, radius, red_color, 2, 8, 0);
 
 
-        imshow(window_name_clr,color_mat);  
+
         //imshow ("contour window", drawing);
 
         int x_val = (int) center.x;
@@ -462,12 +500,28 @@ int main( int argc, char* argv[] ){
 
           update_timestamp(frame_metadata);
           update_position(x_val, y_val, depth_at_center, &intrinsic, frame_metadata);
-          //update_current_velocity();
-          //collectMeasurements();
+          update_current_velocity();
+          collectMeasurements();
           // cout << "x: " << reply->str << endl;
 
           //estimator.update_measurement(measurements, delta_time_us*US_TO_S);
           }
+
+          /*********** PREDICTOR OVERLAY *********************/
+          float pxl_end[2];
+          projectile(0, final_pos);
+
+          rs2_project_point_to_pixel(pxl_end, &intrinsic, final_pos);
+          Point final_pos_ctr;
+          final_pos_ctr = Point(pxl_end[0], pxl_end[1]);
+          circle(color_mat, final_pos_ctr, 1, Scalar(255, 0, 0), 3, LINE_AA);
+          int radius_end = 5;
+          circle(color_mat, final_pos_ctr, radius_end, Scalar(255, 0, 0), 3, LINE_AA);
+
+
+          imshow(window_name_clr,color_mat);  
+
+
         } 
       }
 
