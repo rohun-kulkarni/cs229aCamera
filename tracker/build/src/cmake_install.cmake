@@ -1,4 +1,4 @@
-# Install script for directory: /home/iprl/apps/Camera/tracker/src
+# Install script for directory: /home/iprl/Camera/tracker/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

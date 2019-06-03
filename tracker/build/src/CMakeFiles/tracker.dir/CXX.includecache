@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/iprl/apps/Camera/tracker/include/cv-helpers.hpp
+/home/iprl/Camera/tracker/include/cv-helpers.hpp
 librealsense2/rs.hpp
 -
 opencv2/opencv.hpp
@@ -14,47 +14,47 @@ opencv2/opencv.hpp
 exception
 -
 
-/home/iprl/apps/Camera/tracker/include/ekf.hpp
+/home/iprl/Camera/tracker/include/ekf.hpp
 ../lib/Eigen/Core
-/home/iprl/apps/Camera/tracker/lib/Eigen/Core
+/home/iprl/Camera/tracker/lib/Eigen/Core
 ../lib/Eigen/QR
-/home/iprl/apps/Camera/tracker/lib/Eigen/QR
+/home/iprl/Camera/tracker/lib/Eigen/QR
 ../lib/Eigen/Geometry
-/home/iprl/apps/Camera/tracker/lib/Eigen/Geometry
+/home/iprl/Camera/tracker/lib/Eigen/Geometry
 ../lib/Eigen/LU
-/home/iprl/apps/Camera/tracker/lib/Eigen/LU
+/home/iprl/Camera/tracker/lib/Eigen/LU
 iostream
 -
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/Cholesky
+/home/iprl/Camera/tracker/lib/Eigen/Cholesky
 Core
-/home/iprl/apps/Camera/tracker/lib/Eigen/Core
+/home/iprl/Camera/tracker/lib/Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
 src/Cholesky/LLT.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Cholesky/LLT.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Cholesky/LLT.h
 src/Cholesky/LDLT.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Cholesky/LDLT.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Cholesky/LDLT.h
 src/misc/lapacke.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/lapacke.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/lapacke.h
 src/Cholesky/LLT_LAPACKE.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Cholesky/LLT_LAPACKE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Cholesky/LLT_LAPACKE.h
 src/Core/util/ReenableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/Core
+/home/iprl/Camera/tracker/lib/Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
 math_functions.hpp
 -
 new
 -
 src/Core/util/Macros.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/Macros.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/Macros.h
 complex
 -
 src/Core/util/MKL_support.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/MKL_support.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/MKL_support.h
 malloc.h
 -
 immintrin.h
@@ -122,709 +122,709 @@ iostream
 intrin.h
 -
 src/Core/util/Constants.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/Constants.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/Constants.h
 src/Core/util/Meta.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/Meta.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/Meta.h
 src/Core/util/ForwardDeclarations.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/ForwardDeclarations.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/ForwardDeclarations.h
 src/Core/util/StaticAssert.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/StaticAssert.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/StaticAssert.h
 src/Core/util/XprHelper.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/XprHelper.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/XprHelper.h
 src/Core/util/Memory.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/Memory.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/Memory.h
 src/Core/NumTraits.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/NumTraits.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/NumTraits.h
 src/Core/MathFunctions.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/MathFunctions.h
 src/Core/GenericPacketMath.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/GenericPacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/GenericPacketMath.h
 src/Core/MathFunctionsImpl.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/MathFunctionsImpl.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/MathFunctionsImpl.h
 src/Core/arch/SSE/PacketMath.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/PacketMath.h
 src/Core/arch/AVX/PacketMath.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX/PacketMath.h
 src/Core/arch/AVX512/PacketMath.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX512/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX512/PacketMath.h
 src/Core/arch/AVX512/MathFunctions.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX512/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX512/MathFunctions.h
 src/Core/arch/SSE/PacketMath.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/PacketMath.h
 src/Core/arch/SSE/Complex.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/Complex.h
 src/Core/arch/SSE/MathFunctions.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/MathFunctions.h
 src/Core/arch/AVX/PacketMath.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX/PacketMath.h
 src/Core/arch/AVX/MathFunctions.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX/MathFunctions.h
 src/Core/arch/AVX/Complex.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX/Complex.h
 src/Core/arch/AVX/TypeCasting.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX/TypeCasting.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX/TypeCasting.h
 src/Core/arch/SSE/PacketMath.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/PacketMath.h
 src/Core/arch/SSE/MathFunctions.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/MathFunctions.h
 src/Core/arch/SSE/Complex.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/Complex.h
 src/Core/arch/SSE/TypeCasting.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/TypeCasting.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/TypeCasting.h
 src/Core/arch/AltiVec/PacketMath.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/PacketMath.h
 src/Core/arch/AltiVec/MathFunctions.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/MathFunctions.h
 src/Core/arch/AltiVec/Complex.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/Complex.h
 src/Core/arch/NEON/PacketMath.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/NEON/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/NEON/PacketMath.h
 src/Core/arch/NEON/MathFunctions.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/NEON/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/NEON/MathFunctions.h
 src/Core/arch/NEON/Complex.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/NEON/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/NEON/Complex.h
 src/Core/arch/ZVector/PacketMath.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/PacketMath.h
 src/Core/arch/ZVector/MathFunctions.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/MathFunctions.h
 src/Core/arch/ZVector/Complex.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/Complex.h
 src/Core/arch/CUDA/Half.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/Half.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/Half.h
 src/Core/arch/CUDA/PacketMathHalf.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/PacketMathHalf.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/PacketMathHalf.h
 src/Core/arch/CUDA/TypeCasting.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/TypeCasting.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/TypeCasting.h
 src/Core/arch/CUDA/PacketMath.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/PacketMath.h
 src/Core/arch/CUDA/MathFunctions.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/MathFunctions.h
 src/Core/arch/Default/Settings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/Default/Settings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/Default/Settings.h
 src/Core/functors/TernaryFunctors.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/TernaryFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/TernaryFunctors.h
 src/Core/functors/BinaryFunctors.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/BinaryFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/BinaryFunctors.h
 src/Core/functors/UnaryFunctors.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/UnaryFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/UnaryFunctors.h
 src/Core/functors/NullaryFunctors.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/NullaryFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/NullaryFunctors.h
 src/Core/functors/StlFunctors.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/StlFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/StlFunctors.h
 src/Core/functors/AssignmentFunctors.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/AssignmentFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/AssignmentFunctors.h
 src/Core/arch/CUDA/Complex.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/Complex.h
 src/Core/IO.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/IO.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/IO.h
 src/Core/DenseCoeffsBase.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/DenseCoeffsBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/DenseCoeffsBase.h
 src/Core/DenseBase.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/DenseBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/DenseBase.h
 src/Core/MatrixBase.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/MatrixBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/MatrixBase.h
 src/Core/EigenBase.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/EigenBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/EigenBase.h
 src/Core/Product.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Product.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Product.h
 src/Core/CoreEvaluators.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CoreEvaluators.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CoreEvaluators.h
 src/Core/AssignEvaluator.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/AssignEvaluator.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/AssignEvaluator.h
 src/Core/Assign.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Assign.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Assign.h
 src/Core/ArrayBase.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/ArrayBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/ArrayBase.h
 src/Core/util/BlasUtil.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/BlasUtil.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/BlasUtil.h
 src/Core/DenseStorage.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/DenseStorage.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/DenseStorage.h
 src/Core/NestByValue.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/NestByValue.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/NestByValue.h
 src/Core/ReturnByValue.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/ReturnByValue.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/ReturnByValue.h
 src/Core/NoAlias.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/NoAlias.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/NoAlias.h
 src/Core/PlainObjectBase.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/PlainObjectBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/PlainObjectBase.h
 src/Core/Matrix.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Matrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Matrix.h
 src/Core/Array.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Array.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Array.h
 src/Core/CwiseTernaryOp.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CwiseTernaryOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CwiseTernaryOp.h
 src/Core/CwiseBinaryOp.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CwiseBinaryOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CwiseBinaryOp.h
 src/Core/CwiseUnaryOp.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CwiseUnaryOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CwiseUnaryOp.h
 src/Core/CwiseNullaryOp.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CwiseNullaryOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CwiseNullaryOp.h
 src/Core/CwiseUnaryView.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CwiseUnaryView.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CwiseUnaryView.h
 src/Core/SelfCwiseBinaryOp.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/SelfCwiseBinaryOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/SelfCwiseBinaryOp.h
 src/Core/Dot.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Dot.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Dot.h
 src/Core/StableNorm.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/StableNorm.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/StableNorm.h
 src/Core/Stride.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Stride.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Stride.h
 src/Core/MapBase.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/MapBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/MapBase.h
 src/Core/Map.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Map.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Map.h
 src/Core/Ref.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Ref.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Ref.h
 src/Core/Block.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Block.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Block.h
 src/Core/VectorBlock.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/VectorBlock.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/VectorBlock.h
 src/Core/Transpose.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Transpose.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Transpose.h
 src/Core/DiagonalMatrix.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/DiagonalMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/DiagonalMatrix.h
 src/Core/Diagonal.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Diagonal.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Diagonal.h
 src/Core/DiagonalProduct.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/DiagonalProduct.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/DiagonalProduct.h
 src/Core/Redux.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Redux.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Redux.h
 src/Core/Visitor.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Visitor.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Visitor.h
 src/Core/Fuzzy.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Fuzzy.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Fuzzy.h
 src/Core/Swap.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Swap.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Swap.h
 src/Core/CommaInitializer.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CommaInitializer.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CommaInitializer.h
 src/Core/GeneralProduct.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/GeneralProduct.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/GeneralProduct.h
 src/Core/Solve.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Solve.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Solve.h
 src/Core/Inverse.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Inverse.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Inverse.h
 src/Core/SolverBase.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/SolverBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/SolverBase.h
 src/Core/PermutationMatrix.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/PermutationMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/PermutationMatrix.h
 src/Core/Transpositions.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Transpositions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Transpositions.h
 src/Core/TriangularMatrix.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/TriangularMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/TriangularMatrix.h
 src/Core/SelfAdjointView.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/SelfAdjointView.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/SelfAdjointView.h
 src/Core/products/GeneralBlockPanelKernel.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralBlockPanelKernel.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralBlockPanelKernel.h
 src/Core/products/Parallelizer.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/Parallelizer.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/Parallelizer.h
 src/Core/ProductEvaluators.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/ProductEvaluators.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/ProductEvaluators.h
 src/Core/products/GeneralMatrixVector.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixVector.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixVector.h
 src/Core/products/GeneralMatrixMatrix.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrix.h
 src/Core/SolveTriangular.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/SolveTriangular.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/SolveTriangular.h
 src/Core/products/GeneralMatrixMatrixTriangular.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h
 src/Core/products/SelfadjointMatrixVector.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixVector.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixVector.h
 src/Core/products/SelfadjointMatrixMatrix.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixMatrix.h
 src/Core/products/SelfadjointProduct.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointProduct.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointProduct.h
 src/Core/products/SelfadjointRank2Update.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointRank2Update.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointRank2Update.h
 src/Core/products/TriangularMatrixVector.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixVector.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixVector.h
 src/Core/products/TriangularMatrixMatrix.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixMatrix.h
 src/Core/products/TriangularSolverMatrix.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverMatrix.h
 src/Core/products/TriangularSolverVector.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverVector.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverVector.h
 src/Core/BandMatrix.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/BandMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/BandMatrix.h
 src/Core/CoreIterators.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CoreIterators.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CoreIterators.h
 src/Core/ConditionEstimator.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/ConditionEstimator.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/ConditionEstimator.h
 src/Core/BooleanRedux.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/BooleanRedux.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/BooleanRedux.h
 src/Core/Select.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Select.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Select.h
 src/Core/VectorwiseOp.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/VectorwiseOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/VectorwiseOp.h
 src/Core/Random.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Random.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Random.h
 src/Core/Replicate.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Replicate.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Replicate.h
 src/Core/Reverse.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Reverse.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Reverse.h
 src/Core/ArrayWrapper.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/ArrayWrapper.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/ArrayWrapper.h
 src/Core/products/GeneralMatrixMatrix_BLAS.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrix_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrix_BLAS.h
 src/Core/products/GeneralMatrixVector_BLAS.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixVector_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixVector_BLAS.h
 src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h
 src/Core/products/SelfadjointMatrixMatrix_BLAS.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixMatrix_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixMatrix_BLAS.h
 src/Core/products/SelfadjointMatrixVector_BLAS.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixVector_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixVector_BLAS.h
 src/Core/products/TriangularMatrixMatrix_BLAS.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixMatrix_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixMatrix_BLAS.h
 src/Core/products/TriangularMatrixVector_BLAS.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixVector_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixVector_BLAS.h
 src/Core/products/TriangularSolverMatrix_BLAS.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverMatrix_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverMatrix_BLAS.h
 src/Core/Assign_MKL.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Assign_MKL.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Assign_MKL.h
 src/Core/GlobalFunctions.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/GlobalFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/GlobalFunctions.h
 src/Core/util/ReenableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/Geometry
+/home/iprl/Camera/tracker/lib/Eigen/Geometry
 Core
-/home/iprl/apps/Camera/tracker/lib/Eigen/Core
+/home/iprl/Camera/tracker/lib/Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
 SVD
-/home/iprl/apps/Camera/tracker/lib/Eigen/SVD
+/home/iprl/Camera/tracker/lib/Eigen/SVD
 LU
-/home/iprl/apps/Camera/tracker/lib/Eigen/LU
+/home/iprl/Camera/tracker/lib/Eigen/LU
 limits
 -
 src/Geometry/OrthoMethods.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/OrthoMethods.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/OrthoMethods.h
 src/Geometry/EulerAngles.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/EulerAngles.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/EulerAngles.h
 src/Geometry/Homogeneous.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Homogeneous.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Homogeneous.h
 src/Geometry/RotationBase.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/RotationBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/RotationBase.h
 src/Geometry/Rotation2D.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Rotation2D.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Rotation2D.h
 src/Geometry/Quaternion.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Quaternion.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Quaternion.h
 src/Geometry/AngleAxis.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/AngleAxis.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/AngleAxis.h
 src/Geometry/Transform.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Transform.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Transform.h
 src/Geometry/Translation.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Translation.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Translation.h
 src/Geometry/Scaling.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Scaling.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Scaling.h
 src/Geometry/Hyperplane.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Hyperplane.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Hyperplane.h
 src/Geometry/ParametrizedLine.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/ParametrizedLine.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/ParametrizedLine.h
 src/Geometry/AlignedBox.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/AlignedBox.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/AlignedBox.h
 src/Geometry/Umeyama.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Umeyama.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Umeyama.h
 src/Geometry/arch/Geometry_SSE.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/arch/Geometry_SSE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/arch/Geometry_SSE.h
 src/Core/util/ReenableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/Householder
+/home/iprl/Camera/tracker/lib/Eigen/Householder
 Core
-/home/iprl/apps/Camera/tracker/lib/Eigen/Core
+/home/iprl/Camera/tracker/lib/Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
 src/Householder/Householder.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Householder/Householder.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Householder/Householder.h
 src/Householder/HouseholderSequence.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Householder/HouseholderSequence.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Householder/HouseholderSequence.h
 src/Householder/BlockHouseholder.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Householder/BlockHouseholder.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Householder/BlockHouseholder.h
 src/Core/util/ReenableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/Jacobi
+/home/iprl/Camera/tracker/lib/Eigen/Jacobi
 Core
-/home/iprl/apps/Camera/tracker/lib/Eigen/Core
+/home/iprl/Camera/tracker/lib/Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
 src/Jacobi/Jacobi.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Jacobi/Jacobi.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Jacobi/Jacobi.h
 src/Core/util/ReenableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/LU
+/home/iprl/Camera/tracker/lib/Eigen/LU
 Core
-/home/iprl/apps/Camera/tracker/lib/Eigen/Core
+/home/iprl/Camera/tracker/lib/Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
 src/misc/Kernel.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/Kernel.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/Kernel.h
 src/misc/Image.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/Image.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/Image.h
 src/LU/FullPivLU.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/FullPivLU.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/FullPivLU.h
 src/LU/PartialPivLU.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/PartialPivLU.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/PartialPivLU.h
 src/misc/lapacke.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/lapacke.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/lapacke.h
 src/LU/PartialPivLU_LAPACKE.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/PartialPivLU_LAPACKE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/PartialPivLU_LAPACKE.h
 src/LU/Determinant.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/Determinant.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/Determinant.h
 src/LU/InverseImpl.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/InverseImpl.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/InverseImpl.h
 src/LU/arch/Inverse_SSE.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/arch/Inverse_SSE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/arch/Inverse_SSE.h
 src/Core/util/ReenableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/QR
+/home/iprl/Camera/tracker/lib/Eigen/QR
 Core
-/home/iprl/apps/Camera/tracker/lib/Eigen/Core
+/home/iprl/Camera/tracker/lib/Eigen/Core
 src/Core/util/DisableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
 Cholesky
-/home/iprl/apps/Camera/tracker/lib/Eigen/Cholesky
+/home/iprl/Camera/tracker/lib/Eigen/Cholesky
 Jacobi
-/home/iprl/apps/Camera/tracker/lib/Eigen/Jacobi
+/home/iprl/Camera/tracker/lib/Eigen/Jacobi
 Householder
-/home/iprl/apps/Camera/tracker/lib/Eigen/Householder
+/home/iprl/Camera/tracker/lib/Eigen/Householder
 src/QR/HouseholderQR.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/HouseholderQR.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/HouseholderQR.h
 src/QR/FullPivHouseholderQR.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/FullPivHouseholderQR.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/FullPivHouseholderQR.h
 src/QR/ColPivHouseholderQR.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/ColPivHouseholderQR.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/ColPivHouseholderQR.h
 src/QR/CompleteOrthogonalDecomposition.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/CompleteOrthogonalDecomposition.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/CompleteOrthogonalDecomposition.h
 src/misc/lapacke.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/lapacke.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/lapacke.h
 src/QR/HouseholderQR_LAPACKE.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/HouseholderQR_LAPACKE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/HouseholderQR_LAPACKE.h
 src/QR/ColPivHouseholderQR_LAPACKE.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h
 src/Core/util/ReenableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/SVD
+/home/iprl/Camera/tracker/lib/Eigen/SVD
 QR
-/home/iprl/apps/Camera/tracker/lib/Eigen/QR
+/home/iprl/Camera/tracker/lib/Eigen/QR
 Householder
-/home/iprl/apps/Camera/tracker/lib/Eigen/Householder
+/home/iprl/Camera/tracker/lib/Eigen/Householder
 Jacobi
-/home/iprl/apps/Camera/tracker/lib/Eigen/Jacobi
+/home/iprl/Camera/tracker/lib/Eigen/Jacobi
 src/Core/util/DisableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
 src/misc/RealSvd2x2.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/RealSvd2x2.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/RealSvd2x2.h
 src/SVD/UpperBidiagonalization.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/SVD/UpperBidiagonalization.h
+/home/iprl/Camera/tracker/lib/Eigen/src/SVD/UpperBidiagonalization.h
 src/SVD/SVDBase.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/SVD/SVDBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/SVD/SVDBase.h
 src/SVD/JacobiSVD.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/SVD/JacobiSVD.h
+/home/iprl/Camera/tracker/lib/Eigen/src/SVD/JacobiSVD.h
 src/SVD/BDCSVD.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/SVD/BDCSVD.h
+/home/iprl/Camera/tracker/lib/Eigen/src/SVD/BDCSVD.h
 src/misc/lapacke.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/lapacke.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/lapacke.h
 src/SVD/JacobiSVD_LAPACKE.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/SVD/JacobiSVD_LAPACKE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/SVD/JacobiSVD_LAPACKE.h
 src/Core/util/ReenableStupidWarnings.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Cholesky/LDLT.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Cholesky/LDLT.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Cholesky/LLT.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Cholesky/LLT.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Cholesky/LLT_LAPACKE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Cholesky/LLT_LAPACKE.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Array.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Array.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/ArrayBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/ArrayBase.h
 ../plugins/CommonCwiseUnaryOps.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseUnaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseUnaryOps.h
 ../plugins/MatrixCwiseUnaryOps.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 ../plugins/ArrayCwiseUnaryOps.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/ArrayCwiseUnaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/ArrayCwiseUnaryOps.h
 ../plugins/CommonCwiseBinaryOps.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseBinaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseBinaryOps.h
 ../plugins/MatrixCwiseBinaryOps.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseBinaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 ../plugins/ArrayCwiseBinaryOps.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/ArrayCwiseBinaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/ArrayCwiseBinaryOps.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/ArrayWrapper.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/ArrayWrapper.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Assign.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Assign.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/AssignEvaluator.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/AssignEvaluator.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Assign_MKL.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Assign_MKL.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/BandMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/BandMatrix.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Block.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Block.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/BooleanRedux.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/BooleanRedux.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CommaInitializer.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CommaInitializer.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/ConditionEstimator.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/ConditionEstimator.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CoreEvaluators.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CoreEvaluators.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CoreIterators.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CoreIterators.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CwiseBinaryOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CwiseBinaryOp.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CwiseNullaryOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CwiseNullaryOp.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CwiseTernaryOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CwiseTernaryOp.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CwiseUnaryOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CwiseUnaryOp.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/CwiseUnaryView.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/CwiseUnaryView.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/DenseBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/DenseBase.h
 ../plugins/BlockMethods.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/BlockMethods.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/BlockMethods.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/DenseCoeffsBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/DenseCoeffsBase.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/DenseStorage.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/DenseStorage.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Diagonal.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Diagonal.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/DiagonalMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/DiagonalMatrix.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/DiagonalProduct.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/DiagonalProduct.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Dot.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Dot.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/EigenBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/EigenBase.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Fuzzy.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Fuzzy.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/GeneralProduct.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/GeneralProduct.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/GenericPacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/GenericPacketMath.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/GlobalFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/GlobalFunctions.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/IO.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/IO.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Inverse.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Inverse.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Map.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Map.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/MapBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/MapBase.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/MathFunctions.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/MathFunctionsImpl.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/MathFunctionsImpl.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Matrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Matrix.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/MatrixBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/MatrixBase.h
 ../plugins/CommonCwiseUnaryOps.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseUnaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseUnaryOps.h
 ../plugins/CommonCwiseBinaryOps.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseBinaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseBinaryOps.h
 ../plugins/MatrixCwiseUnaryOps.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 ../plugins/MatrixCwiseBinaryOps.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseBinaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/NestByValue.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/NestByValue.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/NoAlias.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/NoAlias.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/NumTraits.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/NumTraits.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/PermutationMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/PermutationMatrix.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/PlainObjectBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/PlainObjectBase.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Product.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Product.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/ProductEvaluators.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/ProductEvaluators.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Random.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Random.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Redux.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Redux.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Ref.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Ref.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Replicate.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Replicate.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/ReturnByValue.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/ReturnByValue.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Reverse.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Reverse.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Select.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Select.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/SelfAdjointView.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/SelfAdjointView.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/SelfCwiseBinaryOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/SelfCwiseBinaryOp.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Solve.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Solve.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/SolveTriangular.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/SolveTriangular.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/SolverBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/SolverBase.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/StableNorm.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/StableNorm.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Stride.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Stride.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Swap.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Swap.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Transpose.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Transpose.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Transpositions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Transpositions.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/TriangularMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/TriangularMatrix.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/VectorBlock.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/VectorBlock.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/VectorwiseOp.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/VectorwiseOp.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/Visitor.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/Visitor.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX/Complex.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX/MathFunctions.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX/PacketMath.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX/TypeCasting.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX/TypeCasting.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX512/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX512/MathFunctions.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AVX512/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AVX512/PacketMath.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/Complex.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/MathFunctions.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/AltiVec/PacketMath.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/Complex.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/Half.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/Half.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/MathFunctions.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/PacketMath.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/PacketMathHalf.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/PacketMathHalf.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/TypeCasting.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/CUDA/TypeCasting.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/Default/Settings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/Default/Settings.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/NEON/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/NEON/Complex.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/NEON/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/NEON/MathFunctions.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/NEON/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/NEON/PacketMath.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/Complex.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/MathFunctions.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/PacketMath.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/SSE/TypeCasting.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/SSE/TypeCasting.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/Complex.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/Complex.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/MathFunctions.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/MathFunctions.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/PacketMath.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/arch/ZVector/PacketMath.h
 stdint.h
 -
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/AssignmentFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/AssignmentFunctors.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/BinaryFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/BinaryFunctors.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/NullaryFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/NullaryFunctors.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/StlFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/StlFunctors.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/TernaryFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/TernaryFunctors.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/functors/UnaryFunctors.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/functors/UnaryFunctors.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralBlockPanelKernel.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralBlockPanelKernel.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrix.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrixTriangular_BLAS.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrix_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixMatrix_BLAS.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixVector.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixVector.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixVector_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/GeneralMatrixVector_BLAS.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/Parallelizer.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/Parallelizer.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixMatrix.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixMatrix_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixMatrix_BLAS.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixVector.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixVector.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixVector_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointMatrixVector_BLAS.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointProduct.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointProduct.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointRank2Update.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/SelfadjointRank2Update.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixMatrix.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixMatrix_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixMatrix_BLAS.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixVector.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixVector.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixVector_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularMatrixVector_BLAS.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverMatrix.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverMatrix.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverMatrix_BLAS.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverMatrix_BLAS.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverVector.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/products/TriangularSolverVector.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/BlasUtil.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/BlasUtil.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/Constants.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/Constants.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/DisableStupidWarnings.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/ForwardDeclarations.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/ForwardDeclarations.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/MKL_support.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/MKL_support.h
 mkl.h
 -
 ../../misc/blas.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/blas.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/blas.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/Macros.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/Macros.h
 cstdlib
 -
 iostream
 -
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/Memory.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/Memory.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/Meta.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/Meta.h
 cfloat
 -
 math_constants.h
@@ -832,95 +832,95 @@ math_constants.h
 cstdint
 -
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/ReenableStupidWarnings.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/StaticAssert.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/StaticAssert.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Core/util/XprHelper.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Core/util/XprHelper.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/AlignedBox.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/AlignedBox.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/AngleAxis.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/AngleAxis.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/EulerAngles.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/EulerAngles.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Homogeneous.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Homogeneous.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Hyperplane.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Hyperplane.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/OrthoMethods.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/OrthoMethods.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/ParametrizedLine.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/ParametrizedLine.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Quaternion.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Quaternion.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Rotation2D.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Rotation2D.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/RotationBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/RotationBase.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Scaling.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Scaling.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Transform.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Transform.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Translation.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Translation.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/Umeyama.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/Umeyama.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Geometry/arch/Geometry_SSE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Geometry/arch/Geometry_SSE.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Householder/BlockHouseholder.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Householder/BlockHouseholder.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Householder/Householder.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Householder/Householder.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Householder/HouseholderSequence.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Householder/HouseholderSequence.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/Jacobi/Jacobi.h
+/home/iprl/Camera/tracker/lib/Eigen/src/Jacobi/Jacobi.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/Determinant.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/Determinant.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/FullPivLU.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/FullPivLU.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/InverseImpl.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/InverseImpl.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/PartialPivLU.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/PartialPivLU.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/PartialPivLU_LAPACKE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/PartialPivLU_LAPACKE.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/LU/arch/Inverse_SSE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/LU/arch/Inverse_SSE.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/ColPivHouseholderQR.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/ColPivHouseholderQR.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/ColPivHouseholderQR_LAPACKE.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/CompleteOrthogonalDecomposition.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/CompleteOrthogonalDecomposition.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/FullPivHouseholderQR.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/FullPivHouseholderQR.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/HouseholderQR.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/HouseholderQR.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/QR/HouseholderQR_LAPACKE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/QR/HouseholderQR_LAPACKE.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/SVD/BDCSVD.h
+/home/iprl/Camera/tracker/lib/Eigen/src/SVD/BDCSVD.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/SVD/JacobiSVD.h
+/home/iprl/Camera/tracker/lib/Eigen/src/SVD/JacobiSVD.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/SVD/JacobiSVD_LAPACKE.h
+/home/iprl/Camera/tracker/lib/Eigen/src/SVD/JacobiSVD_LAPACKE.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/SVD/SVDBase.h
+/home/iprl/Camera/tracker/lib/Eigen/src/SVD/SVDBase.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/SVD/UpperBidiagonalization.h
+/home/iprl/Camera/tracker/lib/Eigen/src/SVD/UpperBidiagonalization.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/Image.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/Image.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/Kernel.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/Kernel.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/RealSvd2x2.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/RealSvd2x2.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/blas.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/blas.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/lapacke.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/lapacke.h
 lapacke_config.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/lapacke_config.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/lapacke_config.h
 stdlib.h
 -
 complex.h
@@ -928,33 +928,33 @@ complex.h
 complex.h
 -
 lapacke_mangling.h
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/lapacke_mangling.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/lapacke_mangling.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/misc/lapacke_mangling.h
+/home/iprl/Camera/tracker/lib/Eigen/src/misc/lapacke_mangling.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/ArrayCwiseBinaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/ArrayCwiseBinaryOps.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/ArrayCwiseUnaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/ArrayCwiseUnaryOps.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/BlockMethods.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/BlockMethods.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseBinaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseBinaryOps.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseUnaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/CommonCwiseUnaryOps.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseBinaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 
-/home/iprl/apps/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+/home/iprl/Camera/tracker/lib/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
-/home/iprl/apps/Camera/tracker/src/tracker.cpp
+/home/iprl/Camera/tracker/src/tracker.cpp
 librealsense2/rs.hpp
 -
 opencv2/opencv.hpp
 -
 ../include/cv-helpers.hpp
-/home/iprl/apps/Camera/tracker/include/cv-helpers.hpp
+/home/iprl/Camera/tracker/include/cv-helpers.hpp
 opencv2/highgui/highgui.hpp
-/home/iprl/apps/Camera/tracker/src/opencv2/highgui/highgui.hpp
+/home/iprl/Camera/tracker/src/opencv2/highgui/highgui.hpp
 iostream
 -
 cstring
@@ -966,9 +966,9 @@ cstdlib
 librealsense2/rsutil.h
 -
 ../include/ekf.hpp
-/home/iprl/apps/Camera/tracker/include/ekf.hpp
+/home/iprl/Camera/tracker/include/ekf.hpp
 redis/RedisClient.h
-/home/iprl/apps/Camera/tracker/src/redis/RedisClient.h
+/home/iprl/Camera/tracker/src/redis/RedisClient.h
 
 /home/iprl/core/sai2-common/src/redis/RedisClient.h
 eigen3/Eigen/Core

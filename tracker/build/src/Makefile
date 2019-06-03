@@ -48,10 +48,10 @@ RM = /usr/local/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/iprl/apps/Camera/tracker
+CMAKE_SOURCE_DIR = /home/iprl/Camera/tracker
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/iprl/apps/Camera/tracker/build
+CMAKE_BINARY_DIR = /home/iprl/Camera/tracker/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/iprl/apps/Camera/tracker/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/iprl/apps/Camera/tracker/build/CMakeFiles /home/iprl/apps/Camera/tracker/build/src/CMakeFiles/progress.marks
-	cd /home/iprl/apps/Camera/tracker/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/iprl/apps/Camera/tracker/build/CMakeFiles 0
+	cd /home/iprl/Camera/tracker/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/iprl/Camera/tracker/build/CMakeFiles /home/iprl/Camera/tracker/build/src/CMakeFiles/progress.marks
+	cd /home/iprl/Camera/tracker/build && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/iprl/Camera/tracker/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/iprl/apps/Camera/tracker/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /home/iprl/Camera/tracker/build && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/iprl/apps/Camera/tracker/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/iprl/Camera/tracker/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/iprl/apps/Camera/tracker/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /home/iprl/Camera/tracker/build && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/iprl/apps/Camera/tracker/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/iprl/Camera/tracker/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/tracker.dir/rule:
-	cd /home/iprl/apps/Camera/tracker/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/tracker.dir/rule
+	cd /home/iprl/Camera/tracker/build && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/tracker.dir/rule
 .PHONY : src/CMakeFiles/tracker.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ tracker: src/CMakeFiles/tracker.dir/rule
 
 # fast build rule for target.
 tracker/fast:
-	cd /home/iprl/apps/Camera/tracker/build && $(MAKE) -f src/CMakeFiles/tracker.dir/build.make src/CMakeFiles/tracker.dir/build
+	cd /home/iprl/Camera/tracker/build && $(MAKE) -f src/CMakeFiles/tracker.dir/build.make src/CMakeFiles/tracker.dir/build
 .PHONY : tracker/fast
 
 tracker.o: tracker.cpp.o
@@ -131,7 +131,7 @@ tracker.o: tracker.cpp.o
 
 # target to build an object file
 tracker.cpp.o:
-	cd /home/iprl/apps/Camera/tracker/build && $(MAKE) -f src/CMakeFiles/tracker.dir/build.make src/CMakeFiles/tracker.dir/tracker.cpp.o
+	cd /home/iprl/Camera/tracker/build && $(MAKE) -f src/CMakeFiles/tracker.dir/build.make src/CMakeFiles/tracker.dir/tracker.cpp.o
 .PHONY : tracker.cpp.o
 
 tracker.i: tracker.cpp.i
@@ -140,7 +140,7 @@ tracker.i: tracker.cpp.i
 
 # target to preprocess a source file
 tracker.cpp.i:
-	cd /home/iprl/apps/Camera/tracker/build && $(MAKE) -f src/CMakeFiles/tracker.dir/build.make src/CMakeFiles/tracker.dir/tracker.cpp.i
+	cd /home/iprl/Camera/tracker/build && $(MAKE) -f src/CMakeFiles/tracker.dir/build.make src/CMakeFiles/tracker.dir/tracker.cpp.i
 .PHONY : tracker.cpp.i
 
 tracker.s: tracker.cpp.s
@@ -149,7 +149,7 @@ tracker.s: tracker.cpp.s
 
 # target to generate assembly for a file
 tracker.cpp.s:
-	cd /home/iprl/apps/Camera/tracker/build && $(MAKE) -f src/CMakeFiles/tracker.dir/build.make src/CMakeFiles/tracker.dir/tracker.cpp.s
+	cd /home/iprl/Camera/tracker/build && $(MAKE) -f src/CMakeFiles/tracker.dir/build.make src/CMakeFiles/tracker.dir/tracker.cpp.s
 .PHONY : tracker.cpp.s
 
 # Help Target
@@ -175,6 +175,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/iprl/apps/Camera/tracker/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/iprl/Camera/tracker/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

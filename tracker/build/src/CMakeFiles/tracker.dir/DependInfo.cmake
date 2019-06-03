@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/iprl/apps/Camera/tracker/src/tracker.cpp" "/home/iprl/apps/Camera/tracker/build/src/CMakeFiles/tracker.dir/tracker.cpp.o"
+  "/home/iprl/Camera/tracker/src/tracker.cpp" "/home/iprl/Camera/tracker/build/src/CMakeFiles/tracker.dir/tracker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
