@@ -194,6 +194,8 @@ src/CMakeFiles/tracker.dir/tracker.cpp.o: ../lib/Eigen/src/plugins/CommonCwiseBi
 src/CMakeFiles/tracker.dir/tracker.cpp.o: ../lib/Eigen/src/plugins/CommonCwiseUnaryOps.h
 src/CMakeFiles/tracker.dir/tracker.cpp.o: ../lib/Eigen/src/plugins/MatrixCwiseBinaryOps.h
 src/CMakeFiles/tracker.dir/tracker.cpp.o: ../lib/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+src/CMakeFiles/tracker.dir/tracker.cpp.o: ../src/MovingAverage.h
+src/CMakeFiles/tracker.dir/tracker.cpp.o: ../src/ekf.hpp
 src/CMakeFiles/tracker.dir/tracker.cpp.o: ../src/tracker.cpp
 src/CMakeFiles/tracker.dir/tracker.cpp.o: /usr/include/eigen3/Eigen/Core
 src/CMakeFiles/tracker.dir/tracker.cpp.o: /usr/include/eigen3/Eigen/src/Core/SpecialFunctions.h

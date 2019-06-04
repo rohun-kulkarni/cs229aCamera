@@ -195,6 +195,8 @@ src/CMakeFiles/tracker.dir/tracker.cpp.o
  /home/iprl/cs229aCamera/tracker/lib/Eigen/src/plugins/CommonCwiseUnaryOps.h
  /home/iprl/cs229aCamera/tracker/lib/Eigen/src/plugins/MatrixCwiseBinaryOps.h
  /home/iprl/cs229aCamera/tracker/lib/Eigen/src/plugins/MatrixCwiseUnaryOps.h
+ /home/iprl/cs229aCamera/tracker/src/MovingAverage.h
+ /home/iprl/cs229aCamera/tracker/src/ekf.hpp
  /home/iprl/cs229aCamera/tracker/src/tracker.cpp
  /usr/include/eigen3/Eigen/Core
  /usr/include/eigen3/Eigen/src/Core/SpecialFunctions.h

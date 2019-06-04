@@ -9,6 +9,8 @@
 #include <librealsense2/rsutil.h>
 #include "../include/ekf.hpp"
 #include "redis/RedisClient.h"
+#include "MovingAverage.h"
+#include "ekf.hpp"
 
 // #include <librealsense2/rs.hpp> // Include RealSense Cross Platform API
 // #include <opencv2/opencv.hpp>   // Include OpenCV API
@@ -27,6 +29,8 @@ const std::string BALL_POSITION_KEY = "sai2::cs225a::ball_position";
 #define US_TO_S (1.0/1000000.0)
 #define S_TO_US (1000000.0)
 #define IGNORE_BALL_COUNT 10
+
+#define FILTER_COEFFICIENT 0.1
 
 //#define PROJECTILE
 
@@ -56,6 +60,9 @@ static cv::Mat resultHSV;
 static double detected_ball_counter = 0;
 
 static VectorXf measurements(6);
+
+int N = 3; 
+CWeightedMovingAverage movingAvgDepth(N);
 
 static bool multiple_camera_flag = false;
 void addLowerHSVBound(Vec3b &hsv);
@@ -111,6 +118,10 @@ void update_position(int x_val, int y_val, float z_val, rs2_intrinsics * intrins
   float pixelxy[2] = {(float) x_val, (float) y_val};
   //float tmpPos[3];
   //rs2_deproject_pixel_to_point(tmpPos, intrinsic, pixelxy, z_val);
+
+  movingAvgDepth.AddSample(z_val);
+  float z_val_avg = movingAvgDepth.GetAverage(); 
+
 
 
   rs2_deproject_pixel_to_point(current_position, intrinsic, pixelxy, z_val);

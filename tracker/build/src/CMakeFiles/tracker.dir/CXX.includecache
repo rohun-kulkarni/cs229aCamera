@@ -972,6 +972,14 @@ lapacke_mangling.h
 
 /home/iprl/cs229aCamera/tracker/lib/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 
+/home/iprl/cs229aCamera/tracker/src/MovingAverage.h
+queue
+-
+
+/home/iprl/cs229aCamera/tracker/src/ekf.hpp
+iostream
+-
+
 /home/iprl/cs229aCamera/tracker/src/tracker.cpp
 librealsense2/rs.hpp
 -
@@ -995,6 +1003,10 @@ librealsense2/rsutil.h
 /home/iprl/cs229aCamera/tracker/include/ekf.hpp
 redis/RedisClient.h
 /home/iprl/cs229aCamera/tracker/src/redis/RedisClient.h
+MovingAverage.h
+/home/iprl/cs229aCamera/tracker/src/MovingAverage.h
+ekf.hpp
+/home/iprl/cs229aCamera/tracker/src/ekf.hpp
 
 /usr/include/eigen3/Eigen/Core
 src/Core/util/DisableStupidWarnings.h
