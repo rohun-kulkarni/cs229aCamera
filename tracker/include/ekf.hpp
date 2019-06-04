@@ -29,7 +29,6 @@ class EKF
 		vector<MatrixXf> covariance_estimates; 
 
 
-
 	void array_to_vectorXf(float src[], int dim, VectorXf &dest)
 	{
 		for (int i = 0; i < dim; i++)
@@ -40,6 +39,8 @@ class EKF
 
 	/* State transition function fx where
 	x_t+1 = fx + w_t
+	x(0) = px + vx*dt ...
+	x(3) = vx + gx*dt ...
 	*/
 
 	VectorXf state_transition(VectorXf state_vec)
@@ -54,7 +55,7 @@ class EKF
 		return next_state;
 
 	}
-	/* State transition function g where
+	/* measurement transition function g where
 	y_t+1 = g(x_t) + v_t
 	*/
 	VectorXf measurement_model(VectorXf state_vec)
@@ -82,8 +83,8 @@ class EKF
 		state_dim = state_dimension;
 		meas_dim = measurement_dimension;
 
-		Q = 0.0*MatrixXf::Identity(state_dim, state_dim);
-		R = 0.0* MatrixXf::Identity(meas_dim, meas_dim);
+		Q = 0.0 * MatrixXf::Identity(state_dim, state_dim);
+		R = 0.0*  MatrixXf::Identity(meas_dim, meas_dim);
 
 		gravity_vector << 0, 0, 0;
 		//cout << gravity_vector << endl;
@@ -92,6 +93,7 @@ class EKF
 		//state_estimates.push_back(initial_estimate);
 		//cout << state_estimates.front() << endl;
 
+		// Calculate A where A = df_i/dx_i
 		A = MatrixXf::Identity(state_dim, state_dim);
 
 		A(0, 3) = dt;
@@ -149,6 +151,12 @@ class EKF
 		// do something?
 	}
 
+
+	VectorXf getLastEstimate()
+	{
+		return state_estimates.back();
+	}
+	
 	void update_measurement(float new_meas[])
 	{
 		// TODO: check if new measurement is right dimension
@@ -181,6 +189,7 @@ class EKF
 			state_estimates.push_back(initial_estimate);
 			cout << state_estimates.back() << endl;
 		}
+
 		measurements.push_back(new_meas_vec);
 		dt = meas_dt;
 		// cout << "measurement updated: 	";

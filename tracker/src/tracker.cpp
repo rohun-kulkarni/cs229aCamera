@@ -19,12 +19,17 @@
 // #include <hiredis/hiredis.h>
 // #include <cstdlib>
 std::string RS435_KEY = "from camera";
+const std::string BALL_POSITION_KEY = "sai2::cs225a::ball_position";
 
 
-#define MIN_CIRCLE_RADIUS_PXL 20
-#define MAX_CIRCLE_RADIUS_PXL 150
+#define MIN_CIRCLE_RADIUS_PXL 25
+#define MAX_CIRCLE_RADIUS_PXL 200
 #define US_TO_S (1.0/1000000.0)
 #define S_TO_US (1000000.0)
+#define IGNORE_BALL_COUNT 10
+
+//#define PROJECTILE
+
 using namespace std;
 using namespace cv;
 
@@ -34,6 +39,7 @@ static Vec3b ballHSV;
 static bool ballHSV_SetFlag = false;
 static Vec3i lowerHSV;
 static Vec3i upperHSV;
+static Vector3d ball_position; 
 
 static float current_velocity[3];
 static float current_position[3] ;
@@ -42,6 +48,12 @@ static double current_pos_timestamp;
 static double previous_pos_timestamp;
 static float delta_time_us = 1;
 static float final_pos[3] = {-0.1, -0.1, 1.0};
+
+
+static cv::Mat color_mat;
+static cv::Mat resultHSV;
+
+static double detected_ball_counter = 0;
 
 static VectorXf measurements(6);
 
@@ -102,11 +114,11 @@ void update_position(int x_val, int y_val, float z_val, rs2_intrinsics * intrins
 
 
   rs2_deproject_pixel_to_point(current_position, intrinsic, pixelxy, z_val);
-  cout << "Current position" << endl; 
-  cout << current_position[0] << endl;
-  cout << current_position[1] << endl; 
-  cout << current_position[2] << endl; 
-  Vector3d ball_position; 
+  // cout << "Current position" << endl; 
+  // cout << current_position[0] << endl;
+  // cout << current_position[1] << endl; 
+  // cout << current_position[2] << endl; 
+
   ball_position << current_position[0], current_position[1], current_position[2];
   // redis_client.setEigenMatrixJSON(BALL_POSITION_KEY, ball_position);
 
@@ -286,161 +298,164 @@ int main( int argc, char* argv[] ){
   cout << dev_list.size();
   
   if (dev_list.size() > 1)
-    {
-      multiple_camera_flag = true;
+  {
+    multiple_camera_flag = true;
 
-      cout << "multiple devices found " << endl;
-      string first_dev_serial_num =  dev_list[0].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER);
-      
-      if (first_dev_serial_num.compare(D435_SERIAL_NUM_STR) == 0)
-      {
-        d435_cfg.enable_device(dev_list[0].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER));
-        t265_cfg.enable_device(dev_list[1].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER));
-
-      }
-      else 
-      {
-        d435_cfg.enable_device(dev_list[1].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER));
-        t265_cfg.enable_device(dev_list[0].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER));
-      }
-         
-         t265_profile = t265_pipe.start(t265_cfg);
-
-    }
-    else // assume only the rgbd camera is connected. TODO: make this publisher more versatile/
+    cout << "multiple devices found " << endl;
+    string first_dev_serial_num =  dev_list[0].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER);
+    
+    if (first_dev_serial_num.compare(D435_SERIAL_NUM_STR) == 0)
     {
       d435_cfg.enable_device(dev_list[0].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER));
+      t265_cfg.enable_device(dev_list[1].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER));
+
     }
+    else 
+    {
+      d435_cfg.enable_device(dev_list[1].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER));
+      t265_cfg.enable_device(dev_list[0].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER));
+    }
+       
+       t265_profile = t265_pipe.start(t265_cfg);
+
+  }
+  else // assume only the rgbd camera is connected. TODO: make this publisher more versatile/
+  {
+    d435_cfg.enable_device(dev_list[0].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER));
+  }
+  
+
+  //d435_cfg.enable_device(dev_list[0].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER));
+
+  d435_profile = pipe.start(d435_cfg);
+
+  // get intrinsics
+  auto depth_stream = d435_profile.get_stream(RS2_STREAM_DEPTH)
+                       .as<rs2::video_stream_profile>();
+
+  auto intrinsic = depth_stream.get_intrinsics();
+
+  // const auto hough_window = "Hough circle tracker";
+  // namedWindow(hough_window, WINDOW_AUTOSIZE);
+
+  const auto window_name_clr = "Color Window";
+  namedWindow(window_name_clr, WINDOW_AUTOSIZE);
+
+   const auto window_name_hsv = "HSV Window";
+   namedWindow(window_name_hsv, WINDOW_AUTOSIZE);
+
+  auto gen_element = [](int erosion_size)
+  {
+      return getStructuringElement(MORPH_ELLIPSE,
+          Size(erosion_size + 1, erosion_size + 1),
+          Point(erosion_size, erosion_size));
+  };
+
+  const int erosion_size = 3;
+  auto erode_less = gen_element(erosion_size);
+  auto erode_more = gen_element(erosion_size * 2);
+
+  EKF estimator(6, 3);
+
+  /******************LOOP FOR CAMERA FRAMES ************************************/
+  while (waitKey(1) < 0 )
+  {
+    frameset data = pipe.wait_for_frames();
+
+    if (multiple_camera_flag == true)
+    {
+
+    frameset t265_data = t265_pipe.wait_for_frames();
+    auto pose_frame = t265_data.first_or_default(RS2_STREAM_POSE);
     
+    //Cast the frame to pose_frame and get its data
+    
+    auto pose_data = pose_frame.as<rs2::pose_frame>().get_pose_data();
+    string x = to_string(-pose_data.translation.z) + "," + to_string(-pose_data.translation.x) + "," + to_string(2*acos(pose_data.rotation.w));
+    cout << "x string:  " << x << endl;
+    }
 
-    //d435_cfg.enable_device(dev_list[0].get_info(RS2_CAMERA_INFO_SERIAL_NUMBER));
+    // Make sure the frameset is spatialy aligned 
+    // (each pixel in depth image corresponds to the same pixel in the color image)
+    frameset aligned_set = align_to.process(data);
+    depth_frame depth = aligned_set.get_depth_frame();
 
-    d435_profile = pipe.start(d435_cfg);
+    frame color_frame = aligned_set.get_color_frame();
+    color_mat = frame_to_mat(aligned_set.get_color_frame());
+    frame_color_mat = color_mat;
 
-    // get intrinsics
-    auto depth_stream = d435_profile.get_stream(RS2_STREAM_DEPTH)
-                         .as<rs2::video_stream_profile>();
+    //set the callback function for any mouse event
 
-    auto intrinsic = depth_stream.get_intrinsics();
+    /*Testing the HSV contrast method*/
 
-    // const auto hough_window = "Hough circle tracker";
-    // namedWindow(hough_window, WINDOW_AUTOSIZE);
+    Mat hsv_mat;
+    cvtColor(color_mat, hsv_mat, COLOR_BGR2HSV, 0);
 
-    const auto window_name_clr = "Color Window";
-    namedWindow(window_name_clr, WINDOW_AUTOSIZE);
+    setMouseCallback(window_name_clr, colorVal_CB, &color_mat);
 
-    // const auto window_name_hsv = "HSV Window";
-    // namedWindow(window_name_hsv, WINDOW_AUTOSIZE);
+    lowerHSV << 40, 60, 100;
+    upperHSV << 60, 180, 200;
 
-    auto gen_element = [](int erosion_size)
+
+    cv::Mat maskHSV;
+
+    cv::inRange(hsv_mat, lowerHSV, upperHSV, maskHSV);
+    cv::bitwise_and(hsv_mat, hsv_mat, resultHSV, maskHSV);
+
+
+
+    Mat hsv_channels[3];
+
+    // get just the V Channel
+    split( resultHSV, hsv_channels );
+
+    Mat grayMat;
+
+    // Reduce noise to avoid false circle detection
+    GaussianBlur(hsv_channels[2], grayMat, Size(9,9), 2,2);
+    erode(grayMat,grayMat, erode_more);
+    dilate(grayMat,grayMat, erode_less);
+
+    vector<Vec3f> circles;
+
+    vector<vector<Point>> contours;
+    vector<Vec4i> hierarchy;
+    findContours( grayMat, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
+    Mat drawing = Mat::zeros(color_mat.size(), CV_8UC3 );
+
+
+    if (contours.size() > 0)
     {
-        return getStructuringElement(MORPH_ELLIPSE,
-            Size(erosion_size + 1, erosion_size + 1),
-            Point(erosion_size, erosion_size));
-    };
-
-    const int erosion_size = 3;
-    auto erode_less = gen_element(erosion_size);
-    auto erode_more = gen_element(erosion_size * 2);
-
-
-    while (waitKey(1) < 0 )
-    {
-      frameset data = pipe.wait_for_frames();
-
-      if (multiple_camera_flag == true)
-      {
-
-      frameset t265_data = t265_pipe.wait_for_frames();
-      auto pose_frame = t265_data.first_or_default(RS2_STREAM_POSE);
+      Scalar color = Scalar(255, 0, 0); 
       
-      //Cast the frame to pose_frame and get its data
-      
-      auto pose_data = pose_frame.as<rs2::pose_frame>().get_pose_data();
-      string x = to_string(-pose_data.translation.z) + "," + to_string(-pose_data.translation.x) + "," + to_string(2*acos(pose_data.rotation.w));
-      cout << "x string:  " << x << endl;
-      }
+      vector<double> contour_areas (contours.size());
+      for( int i = 0; i < contours.size(); i++ )
+       {
+        contour_areas[i] = contourArea(contours[i]);
 
-      // Make sure the frameset is spatialy aligned 
-      // (each pixel in depth image corresponds to the same pixel in the color image)
-      frameset aligned_set = align_to.process(data);
-      depth_frame depth = aligned_set.get_depth_frame();
+         //drawContours( drawing, contours, i, color, 2, 8, hierarchy, 0, Point() );
+       }
+       const int N = sizeof(contour_areas) / sizeof(double);
 
-       frame color_frame = aligned_set.get_color_frame();
-      auto color_mat = frame_to_mat(aligned_set.get_color_frame());
-      frame_color_mat = color_mat;
-
-      //set the callback function for any mouse event
-
-      /*Testing the HSV contrast method*/
-
-      Mat hsv_mat;
-      cvtColor(color_mat, hsv_mat, COLOR_BGR2HSV, 0);
-
-      setMouseCallback(window_name_clr, colorVal_CB, &color_mat);
-
-
-      lowerHSV << 40, 25, 100;
-
-      upperHSV << 60, 200, 255;
-
-
-      cv::Mat maskHSV, resultHSV;
-
-      cv::inRange(hsv_mat, lowerHSV, upperHSV, maskHSV);
-      cv::bitwise_and(hsv_mat, hsv_mat, resultHSV, maskHSV);
-
-      //imshow(window_name_hsv, resultHSV);
-
-      Mat hsv_channels[3];
-
-      // get just the V Channel
-      split( resultHSV, hsv_channels );
-
-      Mat grayMat;
-
-      // Reduce noise to avoid false circle detection
-      GaussianBlur(hsv_channels[2], grayMat, Size(9,9), 2,2);
-      erode(grayMat,grayMat, erode_more);
-      dilate(grayMat,grayMat, erode_less);
-
-      vector<Vec3f> circles;
-
-
-      vector<vector<Point>> contours;
-      vector<Vec4i> hierarchy;
-      findContours( grayMat, contours, hierarchy, RETR_TREE, CHAIN_APPROX_SIMPLE);
-      Mat drawing = Mat::zeros(color_mat.size(), CV_8UC3 );
-
-
-      if (contours.size() > 0)
-      {
-        Scalar color = Scalar(255, 0, 0); 
-        
-        vector<double> contour_areas (contours.size());
-        for( int i = 0; i < contours.size(); i++ )
-         {
-          contour_areas[i] = contourArea(contours[i]);
-
-           drawContours( drawing, contours, i, color, 2, 8, hierarchy, 0, Point() );
-         }
-         const int N = sizeof(contour_areas) / sizeof(double);
-
-         auto max_contour_index = distance(contour_areas.begin(), max_element(contour_areas.begin(), contour_areas.end()));
-         vector<Point> max_contour = contours[max_contour_index];
+       auto max_contour_index = distance(contour_areas.begin(), max_element(contour_areas.begin(), contour_areas.end()));
+       vector<Point> max_contour = contours[max_contour_index];
         Scalar red_color = Scalar(0, 0,255);
-        //drawContours( drawing, contours, max_contour, red_color, 2, 8, hierarchy, 0, Point() );
-        
-        cv::Point2f center;
-        float radius = 0;
+      
+      //drawContours( drawing, contours, max_contour, red_color, 2, 8, hierarchy, 0, Point() );
+      
+      cv::Point2f center;
+      float radius = 0;
 
-        minEnclosingCircle(max_contour, center, radius);
+      minEnclosingCircle(max_contour, center, radius);
+
+
+      if (radius > MIN_CIRCLE_RADIUS_PXL && radius < MAX_CIRCLE_RADIUS_PXL)
+      {
+        // cout << "HSV Values    " << radius << endl;
+        // cout << (int) hsv_mat.at<Vec3b>(center.y,center.x)[0] << "," << (int) hsv_mat.at<Vec3b>(center.y,center.x)[1]  << "," << (int) hsv_mat.at<Vec3b>(center.y,center.x)[2] << endl;
+
         circle(drawing, center, radius, red_color, 2, 8, 0);
         circle(color_mat, center, radius, red_color, 2, 8, 0);
-
-
-
-        //imshow ("contour window", drawing);
 
         int x_val = (int) center.x;
         int y_val = (int) center.y;
@@ -457,27 +472,7 @@ int main( int argc, char* argv[] ){
         //reply = (redisReply *)redisCommand(c, "GET %s", RS435_KEY.c_str());
         //cout << reply->str << endl;
       
-            /*
-      HoughCircles(grayMat, circles, HOUGH_GRADIENT, 1, 
-                  grayMat.rows/8, 100, 30, 10, 150);
-      
-      Mat hough_mat;
-      hough_mat = grayMat.clone();
-      Point center;
-      for (size_t i = 0; i < circles.size(); i++)
-      {
-        Vec3i c = circles[i];
-        center = Point(c[0],c[1]);
-        // circle center
-        circle(hough_mat, center, 1, Scalar(0,100,100), 3, LINE_AA);
-        // circle outline
-        int radius = c[2];
-        circle(hough_mat, center, radius, Scalar(255,0,255), 3, LINE_AA);
-      }
-      imshow(hough_window, hough_mat);
-      */
-
-        if (depth_at_center != 0)
+        if (depth_at_center != 0 )
         {
           string x_str = to_string(x_val);
           string y_str = to_string(y_val);
@@ -486,28 +481,55 @@ int main( int argc, char* argv[] ){
 
           string pixel_string = x_str +  comma + y_str + comma + depth_str;
           // Send information to redis
-          
-           reply = (redisReply *)redisCommand(c, "SET %s %s", RS435_KEY.c_str(), pixel_string.c_str());
-          
-          reply = (redisReply *)redisCommand(c, "GET %s", RS435_KEY.c_str());
+          if (detected_ball_counter  < 100)
+          {
+            detected_ball_counter = detected_ball_counter + 1;
+          }
           //cout << reply->str << endl;
           
           //reply = (redisReply *)redisCommand(c, "GET %s", MMP_POSE_KEY.c_str());
           //cout << "New estimate:  " << state_estimates.back() << endl;
+          if (detected_ball_counter > IGNORE_BALL_COUNT)
+          {
+            circle(drawing, center, radius, red_color, 2, 8, 0);
+            circle(color_mat, center, radius, red_color, 2, 8, 0);
 
-          rs2_metadata_type frame_metadata;
-          frame_metadata = color_frame.get_frame_metadata(RS2_FRAME_METADATA_FRAME_TIMESTAMP);
+            rs2_metadata_type frame_metadata;
+            frame_metadata = color_frame.get_frame_metadata(RS2_FRAME_METADATA_FRAME_TIMESTAMP);
+            
+            /* if we have met all the prior checks, update the values and send them via redis */
+            
+            // send the pixels for visual servoing
+            reply = (redisReply *)redisCommand(c, "SET %s %s", RS435_KEY.c_str(), pixel_string.c_str());
+            reply = (redisReply *)redisCommand(c, "GET %s", RS435_KEY.c_str());
 
-          update_timestamp(frame_metadata);
-          update_position(x_val, y_val, depth_at_center, &intrinsic, frame_metadata);
-          update_current_velocity();
-          collectMeasurements();
-          // cout << "x: " << reply->str << endl;
+            // send the ball location
 
-          //estimator.update_measurement(measurements, delta_time_us*US_TO_S);
+            string ball_x_str = to_string(ball_position[0]);
+            string ball_y_str = to_string(ball_position[1]);
+            string ball_depth_str = to_string(ball_position[2]);
+
+
+            string ball_pos_string = ball_x_str +  comma + ball_y_str + comma + ball_depth_str;
+            reply = (redisReply *)redisCommand(c, "SET %s %s", BALL_POSITION_KEY.c_str(), ball_pos_string.c_str());
+
+            update_timestamp(frame_metadata);
+            update_position(x_val, y_val, depth_at_center, &intrinsic, frame_metadata);
+            update_current_velocity();
+            collectMeasurements();
+            detected_ball_counter = detected_ball_counter + 1;
+            reply = (redisReply *)redisCommand(c, "GET %s", BALL_POSITION_KEY.c_str());
+            //cout << "BALL POSITION: " << reply->str << endl;
+
+            estimator.update_measurement(measurements, delta_time_us*US_TO_S);
+            VectorXf new_estimate(6);
+            new_estimate << estimator.getLastEstimate();
+            cout << "NEW ESTIMATE:  " << new_estimate << endl;
           }
+        }   
 
           /*********** PREDICTOR OVERLAY *********************/
+          #ifdef PROJECTILE
           float pxl_end[2];
           projectile(0, final_pos);
 
@@ -517,17 +539,18 @@ int main( int argc, char* argv[] ){
           circle(color_mat, final_pos_ctr, 1, Scalar(255, 0, 0), 3, LINE_AA);
           int radius_end = 5;
           circle(color_mat, final_pos_ctr, radius_end, Scalar(255, 0, 0), 3, LINE_AA);
-
-
-          imshow(window_name_clr,color_mat);  
-
-
-        } 
+          #endif
       }
+    }
 
-    
+    imshow(window_name_hsv, resultHSV);
+    imshow(window_name_clr, color_mat);
+    // clear the color matrix;
+    color_mat.release();
+    resultHSV.release();
+  }
 
     std::cout << "Hello there" << endl;
 
       return 0;
-    }
+}

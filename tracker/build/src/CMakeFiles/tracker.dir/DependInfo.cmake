@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/iprl/Camera/tracker/src/tracker.cpp" "/home/iprl/Camera/tracker/build/src/CMakeFiles/tracker.dir/tracker.cpp.o"
+  "/home/iprl/cs229aCamera/tracker/src/tracker.cpp" "/home/iprl/cs229aCamera/tracker/build/src/CMakeFiles/tracker.dir/tracker.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -20,7 +20,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/usr/include/eigen3"
   "/home/iprl/core/chai3d/src"
   "/home/iprl/core/chai3d/external/glew/include"
-  "/home/iprl/core/sai2-simulation-master/src"
+  "/home/iprl/core/sai2-simulation/src"
   "/home/iprl/core/sai2-model/src"
   "/home/iprl/core/sai2-model/rbdl/include"
   "/home/iprl/core/sai2-model/rbdl/build/include"
@@ -33,6 +33,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/iprl/core/sai2-primitives/src"
   "/home/iprl/core/sai2-primitives/ReflexxesTypeII/include"
   "/usr/local/include/opencv4"
+  "/usr/local/include"
   )
 
 # Targets to which this target links.
