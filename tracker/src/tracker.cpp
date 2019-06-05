@@ -265,29 +265,9 @@ int main( int argc, char* argv[] ){
     using namespace cv;
     using namespace rs2;
     
-    redisContext *c;    
-    redisReply *reply;
-
-    const char *hostname = "127.0.0.1";
-    int port =  6379;
-    struct timeval timeout = {1, 500000}; // 1.5 seconds
-    c = redisConnectWithTimeout(hostname, port, timeout);
-    if (c == NULL || c-> err)
-    {
-      if (c) 
-      {
-        cout << "got here" << endl; 
-        printf("Connection error: %s\n", c->errstr);
-        redisFree(c);
-      }
-      else
-      {
-        printf("Connection error: can't allocate redis conetxt \n");
-      }
-      exit(1);
-    }
-    
-
+  // start redis client
+  auto redis_client = RedisClient();
+  redis_client.connect();  
 
 /*********************DEVICE AND STREAM SETUP ********************/    
    // Define colorizer and align processing-blocks
@@ -468,34 +448,22 @@ int main( int argc, char* argv[] ){
         circle(drawing, center, radius, red_color, 2, 8, 0);
         circle(color_mat, center, radius, red_color, 2, 8, 0);
 
-        int x_val = (int) center.x;
-        int y_val = (int) center.y;
-
         float depth_at_center = depth.get_distance((int)center.x,(int)center.y);
-        string x_str = to_string(x_val);
-        string y_str = to_string(y_val);
-        string depth_str = to_string(depth_at_center);
-        string comma = ",";
-
-        string pixel_string = x_str +  comma + y_str + comma + depth_str;
-        // Send information to redis
-        reply = (redisReply *)redisCommand(c, "SET %s %s", RS435_KEY.c_str(), pixel_string.c_str());
-        //reply = (redisReply *)redisCommand(c, "GET %s", RS435_KEY.c_str());
-        //cout << reply->str << endl;
-      
         if (depth_at_center != 0 )
         {
-          string x_str = to_string(x_val);
-          string y_str = to_string(y_val);
-          string depth_str = to_string(depth_at_center);
-          string comma = ",";
-
-          string pixel_string = x_str +  comma + y_str + comma + depth_str;
-          // Send information to redis
           if (detected_ball_counter  < 100)
           {
             detected_ball_counter = detected_ball_counter + 1;
           }
+          int x_val = (int) center.x;
+          int y_val = (int) center.y;
+
+          Vector3d ball_feature(x_val, y_val, depth_at_center);
+
+        // Send information to redis
+        redis_client.setEigenMatrix(RS435_KEY, ball_feature);
+        cout << "pixel location: " << redis_client.getEigenMatrix(RS435_KEY) << endl;
+
           //cout << reply->str << endl;
           
           //reply = (redisReply *)redisCommand(c, "GET %s", MMP_POSE_KEY.c_str());
@@ -509,10 +477,14 @@ int main( int argc, char* argv[] ){
             frame_metadata = color_frame.get_frame_metadata(RS2_FRAME_METADATA_FRAME_TIMESTAMP);
             
             /* if we have met all the prior checks, update the values and send them via redis */
-            
-            // send the pixels for visual servoing
-            reply = (redisReply *)redisCommand(c, "SET %s %s", RS435_KEY.c_str(), pixel_string.c_str());
-            reply = (redisReply *)redisCommand(c, "GET %s", RS435_KEY.c_str());
+
+          string x_str = to_string(x_val);
+          string y_str = to_string(y_val);
+          string depth_str = to_string(depth_at_center);
+          string comma = ",";
+
+          string pixel_string = x_str +  comma + y_str + comma + depth_str;
+          // Send information to redis
 
             // send the ball location
 
@@ -521,21 +493,21 @@ int main( int argc, char* argv[] ){
             string ball_depth_str = to_string(ball_position[2]);
 
 
-            string ball_pos_string = ball_x_str +  comma + ball_y_str + comma + ball_depth_str;
-            reply = (redisReply *)redisCommand(c, "SET %s %s", BALL_POSITION_KEY.c_str(), ball_pos_string.c_str());
+            // string ball_pos_string = ball_x_str +  comma + ball_y_str + comma + ball_depth_str;
+            // reply = (redisReply *)redisCommand(c, "SET %s %s", BALL_POSITION_KEY.c_str(), ball_pos_string.c_str());
 
             update_timestamp(frame_metadata);
             update_position(x_val, y_val, depth_at_center, &intrinsic, frame_metadata);
             update_current_velocity();
             collectMeasurements();
             detected_ball_counter = detected_ball_counter + 1;
-            reply = (redisReply *)redisCommand(c, "GET %s", BALL_POSITION_KEY.c_str());
+            // reply = (redisReply *)redisCommand(c, "GET %s", BALL_POSITION_KEY.c_str());
             //cout << "BALL POSITION: " << reply->str << endl;
 
             estimator.update_measurement(measurements, delta_time_us*US_TO_S);
             VectorXf new_estimate(6);
             new_estimate << estimator.getLastEstimate();
-            cout << "NEW ESTIMATE:  " << new_estimate << endl;
+            // cout << "NEW ESTIMATE:  " << new_estimate << endl;
           }
         }   
 
