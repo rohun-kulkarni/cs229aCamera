@@ -33,7 +33,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/home/iprl/core/sai2-primitives/src"
   "/home/iprl/core/sai2-primitives/ReflexxesTypeII/include"
   "/usr/local/include/opencv4"
-  "/usr/local/include"
   )
 
 # Targets to which this target links.
